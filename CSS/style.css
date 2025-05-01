@@ -137,7 +137,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url('/px-main/CSS/img/pezlorobonito2.webp');
+    background-image: url('./CSS/img/pezlorobonito2.webp');
     background-size:auto;
     background-repeat: no-repeat;
     background-position: center;
@@ -212,7 +212,7 @@ body {
 .parallax-section {
     position: relative;
     min-height: 60vh;
-    background-image: url('/px-main/CSS/img/pezLoro.webp');
+    background-image: url('./CSS/img/pezLoro.webp');
     background-attachment: fixed; /* este es el efecto parallax */
     background-position: center;
     background-repeat: no-repeat;
