@@ -1,22 +1,30 @@
-/* Reinicio general y fuente única */ 
+/* 
+ * Hoja de estilos para la web sobre peces loro, salvemos al pez loro de synergy
+ * Última actualización: Abril 2025
+ * 
+ * Este archivo contiene todos los estilos necesarios del inicio,
+ */
+
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; /* hace que el padding no afecte al ancho total */
 }
 
+/* Estilos generales del body - fondo degradado azul marino */
 body {
     font-family: 'Open Sans', sans-serif;
-    /*
+    /* La siguiente parte está comentada en el original
     background-image: url('/img/fondo.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding-top: 70px; */
-    color: #f0f0f0;
+    color: #f0f0f0; /* texto en color claro para contraste */
    
+    /* Fondo con degradado animado en tonos azules - da sensación de agua */
     background: linear-gradient(45deg, 
     rgba(0, 76, 114, 0.8),
     rgba(0, 120, 167, 0.8), 
@@ -25,563 +33,688 @@ body {
     background-size: 400% 400%;
 }
 
-
-
-.pagina-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 0;
-  background-color: transparent;
-
-}
-
-.card {
-    background: linear-gradient(45deg, 
-    rgba(194, 235, 255, 0.8),
-    rgba(0, 120, 167, 0.8), 
-    rgba(0, 169, 218, 0.8),
-    rgba(218, 244, 255, 0.8));
- 
-  border-radius: 16px;
-  overflow: hidden;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-  animation: aparecer 0.8s ease;
-}
-
-.imagen-container {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.imagen {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.contenido {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.titulo {
-  font-size: 1.8rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.descripcion {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-}
-
-.boton {
-  padding: 0.7rem 1.4rem;
-  background-color: #009688;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.boton:hover {
-  background-color: #00796b;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 480px) {
-  .titulo {
-    font-size: 1.5rem;
-  }
-
-  .descripcion {
-    font-size: 0.95rem;
-  }
-
-  .contenido {
-    padding: 1rem;
-  }
-}
-
-/* Carrusel de inicio */
-.cosasImagen {
-    background: none;
-    height: 160vh; /* Ajustado para que sea un poco más pequeño en altura */
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-/* Carrusel */
-#inicioCarousel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80%;
-    margin-inline: 0%;
-    z-index: 0;
-}
+/* Variables CSS globales - colores principales del tema */
 :root {
-    --dark-blue: #0c1e2e;
-    --medium-blue: #123456;
-    --light-blue: #2a4562;
-    --teal: #2a8396;
-    --white: #ffffff;
+    --primary-color: #005e7c; 
+    --dark-bg: #0a1923; 
+    --overlay-color: rgba(0, 0, 0, 0.4); 
+    --text-light: #ffffff; 
+    --text-dark: #333333; 
 }
-
- /* Contenedor principal */
- .pagina-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
-        /* Estilos para el texto */
-        .texto {
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(0, 120, 167, 0.9), rgba(0, 169, 218, 0.8));
-            color: white;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .texto h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-        }
-        
-        .texto h2 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            font-style: italic;
-        }
-        
-        .textoPDeImagen {
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        
-
-.instagram-section {
-    padding: 2rem 1rem;
-    background-color: var(--dark-blue);
-    position: relative;
-    overflow: hidden;
-}
-
-.instagram-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    color: antiquewhite;
-}
-
-.instagram-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.instagram-logo {
-    font-size: 2rem;
-    margin-right: 1rem;
-}
-
-.instagram-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-}
-
-.instagram-subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    opacity: 0.8;
-}
-
-.instagram-carousel {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-}
-
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.instagram-post {
-    flex: 0 0 85%;
-    margin-right: 15px;
-    background-color: var(--medium-blue);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.instagram-post img {
-    width: 300%;
-    height: 400px;
-    object-fit: cover;
-}
-
-.post-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 1rem;
-    color: white;
-}
-
-.post-caption {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.post-date {
-    font-size: 0.8rem;
-    opacity: 0.7;
-}
-
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.carousel-dot {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.carousel-dot.active {
-    background-color: var(--teal);
-}
-
-.instagram-follow {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.follow-button {
-    display: flex;
-    align-items: center;
-    background-color: var(--teal);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.follow-button:hover {
-    background-color: #1c6a7a;
-}
-
-.follow-button i {
-    margin-right: 8px;
-}
-
-@media (min-width: 768px) {
-    .instagram-post {
-        flex: 0 0 45%;
-    }
-}
-
-@media (min-width: 992px) {
-    .instagram-post {
-        flex: 0 0 30%;
-    }
-}
-
-/* Contenedor del inicio (más reducido para mayor enfoque) */
-.contenidoDentroImagen {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.85);
-    width: 90%; /* Cambiado a 90% para que sea más pequeño */
-    max-width: 400px; /* Máximo ancho */
-    border-radius: 12px;
-    margin: 20px auto; /* Centrado automático */
-    padding: 10px 20px; /* Ajustado para que sea más "gordo" */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
-    display: flex; /* Cambiado a flex */
-    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
-    align-items: center; /* Centra el contenido */
-}
-
-/* Tipografía de títulos y textos */
-.texto {
-    text-align: center;
-    padding: 10px; /* Ajustado para que se vea mejor en el contenedor más pequeño */
-    font-size: 1rem;
-}
-
-.texto > h1 {
-    font-size: 3rem; /* Ajustado para que se vea bien en el contenedor más pequeño */
-    margin-bottom: 10px; /* Ajustado para que se vea mejor */
-    color: #fff;
-    text-shadow: 3px 3px 5px rgba(0,0,0,0.8);
-}
-
-.texto > h2 {
-    font-size: 2rem; /* Ajustado para que se vea bien en el contenedor más pequeño */
-    margin-bottom: 15px; /* Ajustado para que se vea mejor */
-    color: #fff;
-    text-shadow: 3px 3px 5px rgba(0,0,0,0.8);
-}
-
-.texto p {
-    text-align: left;
-    margin-bottom: 10px; /* Ajustado para que se vea mejor */
-    line-height: 1.4; /* Ajustado para que se vea mejor */
-    color: #f0f0f0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
-
-.boton {
-    background-color: #fff;
-    color: #000;
-    border-radius: 5px;
-    border: none;
-    padding: 10px 20px; /* Ajustado para que se vea mejor */
-    font-size: 1.2rem; /* Ajustado para que se vea mejor */
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* Imagen circular */
-.loro {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 50%;
-}
-
-/* Contenedores de secciones (fondo gris con opacidad) */
+/* Contenedores principales con fondo semi-transparente */
 .contenido,
 .containerALL,
 .consumirPeces {
-    background-color: rgba(10, 42, 69, 0.785);
+    background-color: rgba(10, 42, 69, 0.785); /* */
     padding: 15px;
-    margin: 60px auto;
-    border-radius: 8px;
-    max-width: 1200px;
-    color: #f0f0f0;
+    margin: 60px auto; 
+    border-radius: 8px; 
+    max-width: 1200px; 
+    color: #f0f0f0; 
 }
-
-/* Títulos de sección */
+/* Títulos de secciones con línea superior decorativa */
 .distanciadoh2 {
-    margin: 50px 0 30px;
+    margin: 50px 0 30px; /* espacio arriba y abajo */
     padding-top: 10px;
-    border-top: 2px solid #fff;
+    border-top: 2px solid #fff; /* línea decorativa */
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* sombra para destacar */
 }
 
-/* Grid flexible para contenido */
+/* Grid responsivo - se adapta según el ancho disponible */
 .pruebaSSS {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* columnas flexibles */
+    gap: 20px; /* espacio entre elementos */
     max-width: 1000px;
     margin: auto;
     padding: 0 10px;
 }
 
+/* Imágenes dentro del grid */
 .pruebaSSS img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 10px; /* esquinas redondeadas */
 }
 
+/* Contenedores dentro del grid */
 .pruebaSSS div {
-    background-color: rgb(0, 30, 76);
+    background-color: rgba(10, 42, 69, 0.785); /* fondo con transparencia */
     color: #f0f0f0;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
 }
 
-/* Grid para secciones de "Consumir" */
-.cuatroDepredadores {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 10px;
+/* Overlay semi-transparente sobre el fondo */
+.bg-overlay {
+    position: fixed; /* fijo en pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* negro con transparencia */
+    transition: background-color 0.5s ease; /* transición suave */
+    z-index: -1; /* detrás del contenido */
+}
+  
+/* Barra de navegación con transición */
+.navbar {
+    transition: background-color 0.3s ease;
+    padding: 15px 0;
+    background-color: #002444c7;
 }
 
-.losDepredadores2 {
+/* Logo del sitio en la barra de navegación */
+.navbar-brand {
+    font-weight: 700; /* negrita */
+    color: var(--text-light) !important; /* fuerza el color claro */
+}
+
+/* Botón de hamburguesa para menú móvil */
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* borde semi-transparente */
+}
+
+/* Enlaces de la barra de navegación */
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--text-light);
+    margin: 0 10px;
+    transition: color 0.3s; /* transición suave al pasar ratón */
+}
+
+/* Efecto hover en enlaces del menú */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75); /* algo más transparente al pasar ratón */
+}
+
+/* Sección hero principal con imagen de fondo */
+.hero-section {
+    position: relative;
+    min-height: 100vh; /* altura total de pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background-color: rgba(6, 44, 108, 0.9);
+    background-image: url('/px-main/CSS/img/pezlorobonito2.webp');
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 120px 20px 60px;
+    overflow: hidden;
+}
+
+/* Capa oscura sobre la imagen del hero */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)); /* gradiente vertical */
+    transition: background 0.5s ease;
+}
+
+/* Contenido del hero - texto principal */
+.hero-content {
+    position: relative;
+    z-index: 2; /* encima del overlay */
+    max-width: 800px;
+}
+
+/* Título principal grande */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+/* Subtítulo del hero */
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    opacity: 0.9; /* algo transparente */
+    margin-bottom: 30px;
+}
+
+/* Indicador de scroll animado */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-light);
+    animation: bounce 2s infinite; /* animación continua */
+}
+
+/* Animación para el indicador de scroll */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%); /* sube */
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%); /* baja menos */
+    }
+}
+
+/* Secciones de contenido general */
+.content-section {
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* Sección con efecto parallax - se mueve al scroll */
+.parallax-section {
+    position: relative;
+    min-height: 60vh;
+    background-image: url('/px-main/CSS/img/pezLoro.webp');
+    background-attachment: fixed; /* este es el efecto parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Overlay oscuro para la sección parallax */
+.parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+/* Contenido de la sección parallax */
+.parallax-content {
+    position: relative;
+    z-index: 2; /* encima del overlay */
+    color: var(--text-light);
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Títulos de sección principales */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Grid flexible, repetido pero con display flex esta vez */
+.pruebaSSS {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Imagen del pez loro principal */
+.loro {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* sombra suave */
+}
+
+/* Titulos de sección, repetido con más detalles */
+.distanciadoh2 {
+    margin: 50px 0 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+/* Sección de galería estilo Instagram */
+.instagram-section {
+    background-color: #011b53; /* fondo casi negro */
+    padding: 60px 0;
+}
+
+/* Cabecera de la sección Instagram */
+.instagram-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Logo de Instagram */
+.instagram-logo {
+    margin-right: 15px;
+}
+
+/* Título de la sección Instagram */
+.instagram-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Subtítulo de la galería */
+.instagram-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Contenedor del carrusel de imágenes */
+.instagram-carousel {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* Contenedor flexible para el carrusel */
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease; /* movimiento suave */
+    gap: 15px;
+}
+
+/* Tarjetas individuales de la galería */
+.instagram-post {
+    flex: 0 0 calc(33.333% - 10px); /* tres columnas */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Imágenes dentro de las tarjetas */
+.instagram-post img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* mantiene proporción recortando */
+    transition: transform 0.3s ease; /* zoom suave */
+}
+
+/* Overlay con texto sobre las imágenes - aparece al hover */
+.post-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* degradado vertical */
+    color: white;
+    opacity: 0; /* invisible por defecto */
+    transition: opacity 0.3s ease;
+}
+
+/* Hace visible el texto al pasar el ratón */
+.instagram-post:hover .post-overlay {
+    opacity: 1;
+}
+
+/* Efecto zoom suave en la imagen al pasar el ratón */
+.instagram-post:hover img {
+    transform: scale(1.05);
+}
+
+/* Controles del carrusel (puntos) */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Puntos individuales del carrusel */
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* círculo */
+    background-color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Punto activo más claro */
+.carousel-dot.active {
+    background-color: white;
+}
+
+/* Botón de seguir perfil Instagram */
+.instagram-follow {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Estilo del botón de seguir */
+.follow-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #405DE6; /* azul de Instagram */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+/* Icono dentro del botón */
+.follow-button i {
+    margin-right: 10px;
+}
+
+/* Efecto hover en el botón */
+.follow-button:hover {
+    background-color: #304db7; /* azul más oscuro */
+    color: white;
+}
+
+/* Sección principal de tarjetas (depredadores) */
+.containerALL {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Alineación de filas de tarjetas */
+.container .row {
+    justify-content: center;
+}
+
+/* Estilo de las tarjetas individuales */
+.card {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* sombra suave */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto elevación al pasar ratón */
+.card:hover {
+    transform: translateY(-10px); /* sube un poco */
+}
+
+/* Imágenes de las tarjetas */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Cuerpo de las tarjetas */
+.card-body {
     padding: 15px;
-    border-radius: 10px;
 }
 
-.losDepredadores2 h2 {
-    margin: 12px 0;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+/* Títulos de las tarjetas */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-dark);
 }
 
-.losDepredadores2 p {
-    text-align: justify;
-    color: #f0f0f0;
+/* Sección específica sobre consumo de peces */
+.consumirPeces {
+    padding: 60px 20px;
+    background-color: #0d2837; /* azul muy oscuro */
 }
 
+/* Centrado de contenido en sección depredadores */
+.depredadoresCentrado2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Grid para depredadores */
+.cuatroDepredadores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Tarjeta grande individual de depredador */
+.losDepredadores2 {
+    flex: 0 0 100%; /* ancho completo */
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.05); /* muy sutil fondo claro */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Imágenes en tarjetas de depredadores */
 .losDepredadores2 img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Títulos en tarjetas de depredadores */
+.losDepredadores2 h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Textos en tarjetas de depredadores */
+.losDepredadores2 p {
+    font-size: 1rem;
+    line-height: 1.6; /* espaciado entre líneas */
+}
+
+/* Botón para volver arriba */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%; /* círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0; /* invisible por defecto */
+    transition: opacity 0.3s ease;
+    z-index: 999; /* siempre encima */
+}
+
+/* Botón visible cuando bajamos en la página */
+.scroll-to-top.visible {
+    opacity: 1;
+}
+
+/* Estilo para modales - fondos oscuros */
+.modal-content {
+    background-color: #0a1923;
+    color: var(--text-light);
+}
+
+/* Borde en cabecera del modal */
+.modal-header {
+    border-bottom: 1px solid #213741;
+}
+
+/* Borde en pie del modal */
+.modal-footer {
+    border-top: 1px solid #213741;
+}
+
+/* Botón de cerrar modal (x) en blanco */
+.btn-close {
+    filter: invert(1); /* lo pone en blanco */
+}
+
+/* RESPONSIVE*/
+/* Ajustes para tablets */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem; /* título más pequeño */
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .pruebaSSS {
+        flex-direction: column; /* cambia a columna en vez de fila */
+    }
+    
+    .instagram-post {
+        flex: 0 0 calc(50% - 10px); /* dos columnas en vez de tres */
+    }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem; /* título aún más pequeño */
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .distanciadoh2 {
+        font-size: 1.8rem;
+    }
+    
+    .instagram-post {
+        flex: 0 0 100%; /* una sola columna */
+    }
+    
+    .card-img-top {
+        height: 180px; /* imágenes más pequeñas */
+    }
 }
 
 
-
-/**/
-
+/* ---- SECCIÓN DE NOTICIAS ---- */
+/* Contenedor principal de noticias */
 .noticias-container {
     max-width: 100%;
     padding: 15px;
     margin: 0 auto;
-    color: #000;
+    color: #000; /* texto oscuro para contrastar con fondos claros */
 }
 
+/* Título general de la sección */
 .noticias-titulo {
     text-align: center;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: #ffffff; /* blanco para destacar */
     font-size: 1.8rem;
-    border-bottom: 2px solid #0099cc;
+    border-bottom: 2px solid #0099cc; /* línea azul decorativa */
     padding-bottom: 10px;
 }
 
+/* Grid responsivo para noticias - por defecto una columna */
 .noticias-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
+/* Tarjetas individuales de noticias */
 .noticia-card {
-    background-color: white;
+    background-color: white; /* fondo blanco */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
+/* Efecto hover en tarjeta */
 .noticia-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* sube ligeramente */
 }
 
+/* Imágenes de noticias */
 .noticia-imagen {
     width: 100%;
     height: 180px;
-    object-fit: cover;
-    border-bottom: 3px solid #0099cc;
+    object-fit: cover; /* mantiene proporción recortando */
+    border-bottom: 3px solid #0099cc; /* borde azul decorativo */
 }
 
+/* Área de texto en tarjetas */
 .noticia-contenido {
     padding: 15px;
 }
 
+/* Fecha de la noticia */
 .noticia-fecha {
     font-size: 0.8rem;
-    color: #666;
+    color: #666; /* gris */
     margin-bottom: 5px;
 }
 
+/* Título de noticia individual */
 .noticia-titulo {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #0066cc;
+    color: #0066cc; /* azul para títulos */
 }
 
+/* Resumen de la noticia */
 .noticia-resumen {
     font-size: 0.95rem;
     line-height: 1.4;
     margin-bottom: 15px;
 }
 
+/* Botón "Leer más" */
 .noticia-enlace {
     display: inline-block;
     text-decoration: none;
     color: white;
-    background-color: #0099cc;
+    background-color: #0099cc; 
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
 }
 
+/* Efecto hover en botón */
 .noticia-enlace:hover {
-    background-color: #0066cc;
+    background-color: #0066cc; 
 }
 
+/* Responsive para tablets - dos columnas */
 @media (min-width: 768px) {
     .noticias-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Responsive para escritorio - tres columnas */
 @media (min-width: 1024px) {
     .noticias-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
     .noticias-container {
-        max-width: 1200px;
+        max-width: 1200px; /* ancho máximo en pantallas grandes */
     }
 }
+/*TODA LA SECCION DE FOOTER de la antigua actualizacion de enero 2025
+*todo este apartado esta sin documentar hasta ahora en la act de abril25*/
 .footer {
     background-color: #0c1e2e;
     color: #ffffff;
@@ -735,3 +868,5 @@ body {
       max-width: 300px;
     }
   }
+
+/*FIN DE CSS, WEB SALVEMOS AL PEZZLORO, */
